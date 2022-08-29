@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TemplateFullWidthComponent implements OnInit {
 
-  @Input() title: string = 'Page List Orders'
+  @Input() titleEnfant!:any;
 
   constructor() { }
 

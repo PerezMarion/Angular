@@ -9,6 +9,8 @@ import { OrdersService } from '../../services/orders.service';
 
 export class PageListOrdersComponent implements OnInit {
   
+  titleParent: string = 'Titre depuis le Parent';
+
   posts!:any;
 
   constructor(private ordersService: OrdersService) {
