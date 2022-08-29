@@ -1,0 +1,32 @@
+<div class="card" style="width: 25rem">
+  <div class="card-body">
+    <h5 class="card-title">Utilisation de httpModule</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Exercice vendredi 26 août</h6>
+    <p class="card-text">Accès à une base de données par API.</p>
+    <button type="button" class="btn btn-secondary" (click)="displayElement()">
+      Générer la liste d'éléments
+    </button>
+    <button type="button" class="btn btn-danger" (click)="hideElement()">
+      Supprimer
+    </button>
+  </div>
+</div>
+
+<div *ngIf="isGenerated">
+  <h5>Liste d'éléments générés :</h5>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of posts">
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

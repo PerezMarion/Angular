@@ -1,0 +1,13 @@
+<div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <h5 class="card-title">Utilisation de httpModule</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Exercice vendredi 26 août</h6>
+      <p class="card-text">Accès à une base de données par API.</p>
+      <button type="button" class="btn btn-secondary" (click)="generateElement()">Générer un élément</button>
+      <button type="button" class="btn btn-danger" (click)="deleteElement()">Supprimer</button>
+    </div>
+</div>
+<div *ngIf='isGenerated'>
+    <h5>Elément généré :</h5> 
+    <div>{{posts.title}}</div>
+</div>
