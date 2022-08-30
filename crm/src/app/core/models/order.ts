@@ -10,6 +10,12 @@ export class Order implements OrderI {
   client!: string;
   comment!: string;
   id!: number;
+  totalHT(): number {
+    return this.tjmHt*this.nbJours;
+  }
+  totalTTC(): number {
+    return this.tjmHt*this.nbJours*(1+this.tva/100);
+  }
   constructor(obj?: Partial<Order>){
     // vérifier la présence de obj
     if(obj){

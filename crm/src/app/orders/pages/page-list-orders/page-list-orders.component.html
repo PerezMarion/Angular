@@ -11,8 +11,8 @@
       <td>{{i.client}}</td>
       <td>{{i.nbJours}}</td>
       <td>{{i.tjmHt}}</td>
-      <td>{{i.tjmHt | total : i.nbJours}}</td>
-      <td>{{i.tjmHt | total : i.nbJours : i.tva}}</td>
+      <td>{{i | total}}</td>
+      <td>{{i | total : true}}</td>
       <td>{{i.state}}</td>
     </tr>
   </app-table-light>

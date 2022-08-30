@@ -33,5 +33,13 @@ export class PageListOrdersComponent implements OnInit {
       });
   }
 
+  // remplacer par le pipe total
+  // total(nbJours: number, tjmHt:number, tva?:number): number {
+  //   if(tva){
+  //     return nbJours*tjmHt*(1+tva/100);
+  //   }
+  //   return nbJours*tjmHt;
+  // }
+
   ngOnInit(): void {}
 }
