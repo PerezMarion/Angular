@@ -6,15 +6,14 @@ import { Order } from 'src/app/core/models/order';
   templateUrl: './table-light.component.html',
   styleUrls: ['./table-light.component.scss']
 })
+
 export class TableLightComponent implements OnInit {
 
   // décorateur @Input()
   @Input() collection!: Order[]; // undefined
   @Input() headers!: string[];
 
-  constructor() {
-    //console.log(this.collection, 'tableau'); // undefined
-  }
+  constructor() {}
 
   ngOnInit(): void {
     console.log(this.headers, 'headers');

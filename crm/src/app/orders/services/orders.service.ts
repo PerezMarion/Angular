@@ -12,7 +12,7 @@ export class OrdersService {
   private collection$!: Observable<Order[]>;
 
   constructor(private http: HttpClient) {
-    this.collection = this.http.get<Order[]>('http://localhost:4002/orders');
+    this.collection = this.http.get<Order[]>('http://localhost:3000/orders');
   }
 
   // on va appeler cette fonction depuis l'extérieur this.orderService.collection (getteur)
