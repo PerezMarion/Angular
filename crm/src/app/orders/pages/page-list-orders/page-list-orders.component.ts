@@ -9,7 +9,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrdersComponent implements OnInit {
   // créer la variable titleParent;
-  titleParent: string = 'Titre depuis Parent';
+  titleParent: string = 'Liste des commandes';
 
   collection!: Order[];
   // en-têtes du tableau de type array

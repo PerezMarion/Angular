@@ -10,7 +10,7 @@ import { Order } from 'src/app/core/models/order';
 export class TableLightComponent implements OnInit {
 
   // décorateur @Input()
-  @Input() collection!: Order[]; // undefined
+  // @Input() collection!: Order[]; // undefined
   @Input() headers!: string[];
 
   constructor() {}
@@ -21,7 +21,7 @@ export class TableLightComponent implements OnInit {
 
   // hook qui se déclenche à chaque nouvelle modification du composant
   ngOnChanges(){
-    console.log(this.collection, 'ngOnChanges');
+    // console.log(this.collection, 'ngOnChanges');
   }
 
 }

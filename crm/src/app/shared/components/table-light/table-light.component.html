@@ -1,23 +1,16 @@
+<!-- collection est un tableau donc il faut utiliser *ngFor -->
 <table class="table">
     <!-- thead utile pour le référencement -->
     <thead>
-        <!-- table row (ligne) -->
-        <tr>
-            <!--   table header cells (th) -->
-            <th *ngFor="let i of headers" scope="col">{{i}}</th>
-        </tr>    
+      <!-- table row (ligne) -->
+      <tr>
+        <!--   table header cells (th) -->
+        <!-- itérer dans headers -->
+        <th *ngFor='let i of headers' scope="col">{{i}}</th>
+      </tr>
     </thead>
     <tbody>
-       <tr *ngFor="let i of collection">
-           <!--  table data cells (td)-->
-           <td>Action</td>
-           <td>{{i.typePresta}}</td>
-           <td>{{i.client}}</td>
-           <td>{{i.nbJours}}</td>
-           <td>{{i.tjmHt}}</td>
-           <td>Total HT</td>
-           <td>Total TTC</td>
-           <td>{{i.state}}</td>
-       </tr>
+      <ng-content></ng-content>
+      <!-- itérer dans collection -->
     </tbody>
- </table>
+</table>
