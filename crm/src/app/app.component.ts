@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'crm';
-}
+  // ici on met des variables(=propriétés);
+  // des fonctions(=méthodes)
+  
+
+
+}// NE RIEN ECRIRE APRES CETTE LIGNE

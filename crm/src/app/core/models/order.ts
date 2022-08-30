@@ -1,7 +1,8 @@
 import { StateOrder } from '../enums/state-order';
+import { OrderI } from '../interfaces/order-i';
 
-export class Order {
-  tjmHt = 1200;
+export class Order implements OrderI {
+  tjmHt = 1200;// number pas string
   nbJours = 1;
   tva = 20;
   state = StateOrder.OPTION // "OPTION";

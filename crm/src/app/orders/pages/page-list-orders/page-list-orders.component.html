@@ -1,1 +1,10 @@
-<app-template-full-width [titleEnfant] = 'titleParent'></app-template-full-width>
+<app-template-full-width [titleEnfant]='titleParent'>
+  <!-- ajouter un tableau -->
+  <app-table-light
+  [collection]='collection'
+  [headers]='headers'
+  ></app-table-light>
+  <!-- envoyer collection avec @Input() -->
+  <!-- vérifier aussi dans app-table-light que vous recevez bien collection -->
+
+</app-template-full-width>

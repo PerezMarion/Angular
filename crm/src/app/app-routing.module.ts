@@ -4,6 +4,7 @@ import { PageForgotPasswordComponent } from './login/pages/page-forgot-password/
 import { PageResetPasswordComponent } from './login/pages/page-reset-password/page-reset-password.component';
 import { PageSignInComponent } from './login/pages/page-sign-in/page-sign-in.component';
 import { PageSignUpComponent } from './login/pages/page-sign-up/page-sign-up.component';
+import { PageListOrdersComponent } from './orders/pages/page-list-orders/page-list-orders.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -44,6 +45,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
   constructor(private router: Router){
-    console.log(this.router.config, 'tableau de routes');
+    //console.log(this.router.config, 'tableau de routes');
   }
 }

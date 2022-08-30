@@ -1,13 +1,33 @@
 <!-- projet POEC SOPRA du 22 juillet -->
 
+<!-- ici le contenu -->
+<!-- <h1>ceci est un texte depuis app.component</h1> -->
+<!-- ici j'affiche le contenu de la propriété -->
+<!-- méthode string interpolation -->
+<!-- <h2>{{ title }}</h2> crm -->
+<!-- {{ 1+1 }} 2 -->
+
+<!-- créer un nouveau composant -->
+<!-- ici afficher un nouveau composant FooterCrmComponent -->
+<!-- <app-footer-crm></app-footer-crm> -->
+<!-- dans le nouveau composant, on affiche la valeur d'une propriété
+company='coca'  -->
+
 <app-ui>
 
   <app-icon-close class='tr-btn-close'></app-icon-close>
   <app-icon-nav class='tr-btn-nav'></app-icon-nav>
-  <!-- ici on va utiliser router-outlet et le projeter dans le composant ui -->
+  <!-- ici on va utiliser router-outlet
+  et le projeter dans le composant ui
+  -->
+  <!-- afficher liste des orders ou bien des clients -->
+  <!-- /orders -->
   <router-outlet class='tr-router'></router-outlet>
   <app-header class='tr-header'></app-header>
   <app-nav class='tr-nav'></app-nav>
   <app-footer class='tr-footer'></app-footer>
 
 </app-ui>
+
+
+
