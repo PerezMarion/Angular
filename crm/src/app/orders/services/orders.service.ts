@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { environment } from 'src/environments/environment';
+import { StateOrder } from 'src/app/core/enums/state-order';
 
 // décorateur
 @Injectable({
@@ -32,11 +33,15 @@ export class OrdersService {
     this.collection$ = col;
   }
 
-  // créer une méthode + url http://localhost:3000/orders
-  // utiliser cette méthode dans page-list-orders
+  changeState(item: Order, state: StateOrder): Observable<Order> {
+    const obj = new Order(item);
+    obj.state =  state;
+    return this.update(obj);
+  }
 
-  // onDisplayList() {
-  //   ici besoin de typer ce que nous retourne l'API
-  //   return this.http.get<Order[]>('http://localhost:4002/orders');
-  // }
+update(obj: Order) {
+
+  return this.http.put<Order>(this.urlApi + "/orders/" + obj.id, obj)
+}
+
 }

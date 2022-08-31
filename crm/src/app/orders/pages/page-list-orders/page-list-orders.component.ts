@@ -19,8 +19,8 @@ export class PageListOrdersComponent implements OnInit {
     'Action',
     'Type',
     'Client',
-    'NbJours',
-    'Tjm HT',
+    'Nombre de jour(s)',
+    'Total journalier HT',
     'Total HT',
     'Total TTC',
     'State',
@@ -32,6 +32,16 @@ export class PageListOrdersComponent implements OnInit {
   }
 
   states = Object.values(StateOrder)
+
+  changeState(item: Order, event : Event) {
+    const target = event.target as HTMLSelectElement;
+    const state = target.value as StateOrder;
+    console.log(state);
+    this.ordersService.changeState(item, state).subscribe(response => {
+      console.log(response);
+      Object.assign(item, response);
+    });
+  }
 
   ngOnInit(): void {}
 }

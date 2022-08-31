@@ -1,11 +1,7 @@
 <app-template-full-width [titleEnfant]='titleParent' *ngIf="collection$ | async as collection">
-  <!-- ajouter un tableau -->
-  <app-table-light
-  [headers]='headers'
-  >
-  <!-- ici on projète le tableau -->
+
+  <app-table-light [headers]='headers'>
     <tr *ngFor='let i of collection'>
-      <!--  table data cells (td)-->
       <td>Action</td>
       <td>{{i.typePresta | uppercase}}</td>
       <td>{{i.client}}</td>
@@ -14,12 +10,10 @@
       <td>{{i | total}}</td>
       <td>{{i | total : true}}</td>
       <td>
-        <select>
+        <select (change)="changeState(i, $event)">
           <option *ngFor="let state of states" [selected]="state === i.state" [value]="state">{{state}}</option>
         </select>
       </td>
     </tr>
   </app-table-light>
-  <!-- envoyer collection avec @Input() -->
-  <!-- vérifier aussi dans app-table-light que vous recevez bien collection -->
 </app-template-full-width>
