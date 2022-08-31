@@ -39,7 +39,7 @@ export class OrdersService {
     return this.update(obj);
   }
 
-update(obj: Order) {
+  update(obj: Order) {
 
   return this.http.put<Order>(this.urlApi + "/orders/" + obj.id, obj)
 }

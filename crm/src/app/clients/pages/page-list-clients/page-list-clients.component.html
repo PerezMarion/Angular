@@ -1,1 +1,18 @@
-<p>page-list-clients works!</p>
+<app-template-full-width [titleEnfant]='titleParent' *ngIf="collection$ | async as collection">
+
+    <app-table-light [headers]='headers'>
+        <tr *ngFor='let i of collection'>
+          <td>Action</td>
+          <td>{{i.name | uppercase}}</td>
+          <td>{{i.totalCaHt}}</td>
+          <td>{{i.comment}}</td>
+          <td appState [etat]="i.state">
+            <select (change)="changeState(i, $event)">
+              <option *ngFor="let state of states" [selected]="state === i.state" [value]="state">{{state}}</option>
+            </select>
+          </td>
+        </tr>
+      </app-table-light>
+
+</app-template-full-width>
+<app-btn route= "add" label="Ajouter" styleBtn="btn btn-primary"></app-btn>

@@ -9,5 +9,11 @@ export class Client implements ClientI{
     totalCaHt= 25000;
     comment!: string;
 
-    constructor() {}
+    constructor(obj?: Partial<Client>){
+        // vérifier la présence de obj
+        if(obj){
+          // Object.assign(objCible, objSource)
+          Object.assign(this, obj)
+        }
+      }
 }
