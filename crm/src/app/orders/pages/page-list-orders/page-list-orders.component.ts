@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -11,7 +12,8 @@ export class PageListOrdersComponent implements OnInit {
   // créer la variable titleParent;
   titleParent: string = 'Liste des commandes';
 
-  collection!: Order[];
+  // collection!: Order[];
+  collection$! : Observable<Order[]>;
   // en-têtes du tableau de type array
   // faire passer headers au composant enfant
   public headers = [
@@ -27,10 +29,7 @@ export class PageListOrdersComponent implements OnInit {
 
   constructor(private ordersService: OrdersService) {
 
-    this.ordersService.collection.subscribe((data) => {
-        this.collection = data;
-        console.log(this.collection); // attention de ne écrire cette ligne en dehors des {}, sinon undefined
-      });
+    this.collection$ = this.ordersService.collection;
   }
 
   // remplacer par le pipe total

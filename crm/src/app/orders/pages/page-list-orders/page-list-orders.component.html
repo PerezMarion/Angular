@@ -1,4 +1,4 @@
-<app-template-full-width [titleEnfant]='titleParent'>
+<app-template-full-width [titleEnfant]='titleParent' *ngIf="collection$ | async as collection">
   <!-- ajouter un tableau -->
   <app-table-light
   [headers]='headers'
