@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-3" *ngFor="let item of collection | slice:nextVal*12:(nextVal + 1 )*12">
+
+
+      <div class="card">
+        <!-- offset -->
+
+
+        <img class="card-img-top" src="{{item.thumbnailUrl}}" alt="Card image cap">
+
+
+
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.id}}</p>
+          <a href="{{item.url}}" class="btn btn-primary"> voir </a>
+
+          <!-- <a routerLink="{{item.url}}" routerLinkActive="router-link-active" class="btn btn-primary">Voir</a> -->
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <div class="btn btn-primary m-1" [ngClass]="{'disabled': nextVal === 0}" (click)="onPrev()">Decrement</div>
+  <div class="btn btn-primary m-1" (click)="onNext()">Increment</div>
+
+</div>
