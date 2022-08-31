@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -9,13 +10,11 @@ import { OrdersService } from '../../services/orders.service';
   styleUrls: ['./page-list-orders.component.scss'],
 })
 export class PageListOrdersComponent implements OnInit {
-  // créer la variable titleParent;
+
   titleParent: string = 'Liste des commandes';
 
-  // collection!: Order[];
   collection$! : Observable<Order[]>;
-  // en-têtes du tableau de type array
-  // faire passer headers au composant enfant
+
   public headers = [
     'Action',
     'Type',
@@ -32,13 +31,7 @@ export class PageListOrdersComponent implements OnInit {
     this.collection$ = this.ordersService.collection;
   }
 
-  // remplacer par le pipe total
-  // total(nbJours: number, tjmHt:number, tva?:number): number {
-  //   if(tva){
-  //     return nbJours*tjmHt*(1+tva/100);
-  //   }
-  //   return nbJours*tjmHt;
-  // }
+  states = Object.values(StateOrder)
 
   ngOnInit(): void {}
 }

@@ -13,7 +13,11 @@
       <td>{{i.tjmHt}}</td>
       <td>{{i | total}}</td>
       <td>{{i | total : true}}</td>
-      <td>{{i.state}}</td>
+      <td>
+        <select>
+          <option *ngFor="let state of states" [selected]="state === i.state" [value]="state">{{state}}</option>
+        </select>
+      </td>
     </tr>
   </app-table-light>
   <!-- envoyer collection avec @Input() -->
