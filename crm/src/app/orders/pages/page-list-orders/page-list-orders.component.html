@@ -2,7 +2,7 @@
 
   <app-table-light [headers]='headers'>
     <tr *ngFor='let i of collection'>
-      <td>Action</td>
+      <td><app-icon-edit (click)="goToEdit(i)"></app-icon-edit></td>
       <td>{{i.typePresta | uppercase}}</td>
       <td>{{i.client}}</td>
       <td>{{i.nbJours}}</td>
