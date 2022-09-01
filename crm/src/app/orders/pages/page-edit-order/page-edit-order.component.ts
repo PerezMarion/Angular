@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
@@ -16,13 +16,16 @@ export class PageEditOrderComponent implements OnInit {
 
   constructor(
     private ordersService: OrdersService,
-    private activatedRoute : ActivatedRoute) { 
+    private activatedRoute : ActivatedRoute,
+    private router : Router) { 
       const orderId = Number(this.activatedRoute.snapshot.paramMap.get("id"));
       this.item$ = this.ordersService.getById(orderId);
   }
 
   onEdit(item : Order) {
-    
+    this.ordersService.update(item).subscribe(data => {
+      this.router.navigate(["orders"]);
+    });
   }
 
   ngOnInit(): void {

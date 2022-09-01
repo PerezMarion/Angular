@@ -10,7 +10,7 @@ const routes: Routes = [
   // route /clients/add = PageAddClientComponent
   { path: 'add', component: PageAddClientComponent },
   // route /clients/edit = PageEditClientComponent
-  { path: 'edit', component: PageEditClientsComponent },
+  { path: 'edit/:id', component: PageEditClientsComponent },
 ];
 
 @NgModule({

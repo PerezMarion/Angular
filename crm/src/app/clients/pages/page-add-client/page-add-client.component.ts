@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Client } from 'src/app/core/models/client';
+import { ClientsService } from '../../services/clients.service';
 
 @Component({
   selector: 'app-page-add-client',
@@ -7,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAddClientComponent implements OnInit {
 
-  constructor() { }
+  public item = new Client();
+
+  constructor(
+    private clientsService : ClientsService,
+    private router : Router) 
+  { }
+
+  onAdd(item: Client) {
+    this.clientsService.add(item).subscribe(data => {
+      this.router.navigate(["clients"]);
+    });
+  }
 
   ngOnInit(): void {
   }

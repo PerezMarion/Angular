@@ -95,6 +95,14 @@
       "name": "modis",
       "comment": "rsger",
       "id": 3
+    },
+    {
+      "state": "INACTIVE",
+      "tva": 20,
+      "totalCaHt": 25000,
+      "name": "Client test",
+      "comment": 1,
+      "id": 4
     }
   ]
 }

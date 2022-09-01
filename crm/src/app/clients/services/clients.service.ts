@@ -34,7 +34,11 @@ export class ClientsService {
 
   update(obj: Client) {
 
-  return this.http.put<Client>(this.urlApi + "/clients/" + obj.id, obj)
-}
+    return this.http.put<Client>(this.urlApi + "/clients/" + obj.id, obj)
+  }
+
+  add(obj: Client): Observable<Client> {
+    return this.http.post<Client>(this.urlApi + "/clients", obj);
+  }
 
 }

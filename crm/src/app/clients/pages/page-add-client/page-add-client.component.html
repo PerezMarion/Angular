@@ -1,1 +1,3 @@
-<p>page-add-client works!</p>
+<app-template-full-width titleEnfant="Ajouter un client">
+    <app-form-client [init]='item' (onSubmitEvent)="onAdd($event)"></app-form-client>   
+</app-template-full-width>

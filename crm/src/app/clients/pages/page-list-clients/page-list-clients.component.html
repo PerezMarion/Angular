@@ -2,7 +2,7 @@
 
     <app-table-light [headers]='headers'>
         <tr *ngFor='let i of collection'>
-          <td>Action</td>
+          <td><app-icon-edit (click)="goToEdit(i)"></app-icon-edit></td>
           <td>{{i.name | uppercase}}</td>
           <td>{{i.totalCaHt}}</td>
           <td>{{i.comment}}</td>
@@ -12,7 +12,7 @@
             </select>
           </td>
         </tr>
-      </app-table-light>
+    </app-table-light>
 
 </app-template-full-width>
 <app-btn route= "add" label="Ajouter" styleBtn="btn btn-primary"></app-btn>
