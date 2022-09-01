@@ -23,7 +23,7 @@ export class PageListOrdersComponent implements OnInit {
     'Total journalier HT',
     'Total HT',
     'Total TTC',
-    'State'
+    'Etat'
   ];
 
   constructor(private ordersService: OrdersService) {
