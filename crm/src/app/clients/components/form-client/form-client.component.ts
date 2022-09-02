@@ -22,11 +22,12 @@ export class FormClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      state: [this.init.state, Validators.required],
-      tva: [this.init.tva, Validators.required],
-      name: [this.init.name, Validators.required],
-      totalCaHt: [this.init.totalCaHt, Validators.required],
-      comment: [this.init.comment, Validators.required],
+      name: [this.init.name],
+      totalCaHt: [this.init.totalCaHt],
+      tva: [this.init.tva],
+      comment: [this.init.comment],
+      state: [this.init.state],
+      id: [this.init.id]
     })
   }
 

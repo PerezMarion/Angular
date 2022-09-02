@@ -18,17 +18,17 @@ export class PageListClientsComponent implements OnInit {
 
   public headers = [
     'Action',
-    'Name',
-    'TotalCaHT',
+    'Nom',
+    'Total chiffre d affaire HT',
     'Commentaire',
-    'State'
+    'Etat'
   ];
 
   constructor(
     private clientsService : ClientsService,
     private router : Router) {
-
-    this.collection$ = this.clientsService.collection;
+      this.clientsService.refreshCollection();
+      this.collection$ = this.clientsService.collection;
   }
 
   states = Object.values(StateClient)
@@ -36,9 +36,7 @@ export class PageListClientsComponent implements OnInit {
   changeState(item: Client, event : Event) {
     const target = event.target as HTMLSelectElement;
     const state = target.value as StateClient;
-    console.log(state);
     this.clientsService.changeState(item, state).subscribe(response => {
-      console.log(response);
       Object.assign(item, response);
     });
   }
@@ -47,7 +45,9 @@ export class PageListClientsComponent implements OnInit {
     this.router.navigate(["clients", "edit", item.id]);
   }
 
-  ngOnInit(): void {
+  onDelete(item: Client) {
+    this.clientsService.delete(item).subscribe();
   }
 
+  ngOnInit(): void {}
 }

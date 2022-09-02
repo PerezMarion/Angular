@@ -1,38 +1,32 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-    <div class="form-group">
-        <label for="typePresta">TVA</label>
-        <input type="text" class="form-control" id="typePresta" formControlName="tva">
-      </div>
-    
-      <div class="form-group">
-        <label for="name">Nom</label>
-        <input type="text" class="form-control" id="client"  formControlName="name">
-    
-      </div>
-    
-      <div class="form-group">
-        <label for="totalCaHt">Nombre</label>
-        <input type="number" class="form-control" id="totalCaHt" formControlName="totalCaHt">
-      </div>
-    
-      <div class="form-group">
-        <label for="comment">VAT (%)</label>
-        <input type="number" class="form-control" id="comment" formControlName="comment">
-      </div>
-    
-      <div class="form-group">
-        <label for="state">Etat</label>
-        <select class="form-control" id="state">
-          <option
-          [selected]="state === init.state"
-          *ngFor="let state of states" [value]="state">{{ state }}</option>
-        </select>
-      </div>
-    
-      <div class="form-group">
-        <label for="comment">Commentaire</label>
-        <textarea class="form-control" id="comment"></textarea>
-      </div>
-    <button type="submit" class="btn btn-primary">Soumettre</button>
+  <div class="form-group">
+    <label for="name">Nom</label>
+    <input formControlName="name" type="text" class="form-control" id="name" />
+  </div>
+
+  <div class="form-group">
+    <label for="totalCaHt">Total chiffre d affaire HT</label>
+    <input formControlName="totalCaHt" type="number" class="form-control" id="totalCaHt" />
+  </div> 
+
+  <div class="form-group">
+    <label for="tva">TVA</label>
+    <input formControlName="tva" type="number" class="form-control" id="tva" />
+  </div>  
+
+  <div class="form-group">
+    <label for="comment">Commentaire</label>
+    <textarea formControlName="comment" class="form-control" id="comment"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="state">Etat</label>
+    <select formControlName="state" class="form-control" id="state">
+      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Soumettre</button>
+
 </form>

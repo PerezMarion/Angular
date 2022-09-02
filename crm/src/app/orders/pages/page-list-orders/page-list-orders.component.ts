@@ -30,6 +30,7 @@ export class PageListOrdersComponent implements OnInit {
   constructor(
     private ordersService: OrdersService,
     private router : Router) {
+      this.ordersService.refreshCollection();
       this.collection$ = this.ordersService.collection;
   }
 
@@ -38,15 +39,17 @@ export class PageListOrdersComponent implements OnInit {
   changeState(item: Order, event : Event) {
     const target = event.target as HTMLSelectElement;
     const state = target.value as StateOrder;
-    console.log(state);
     this.ordersService.changeState(item, state).subscribe(response => {
-      console.log(response);
       Object.assign(item, response);
     });
   }
 
   goToEdit(item: Order) {
     this.router.navigate(["orders", "edit", item.id]);
+  }
+
+  onDelete(item: Order) {
+    this.ordersService.delete(item).subscribe();
   }
 
   ngOnInit(): void {}

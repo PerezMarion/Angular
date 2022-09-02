@@ -2,7 +2,10 @@
 
     <app-table-light [headers]='headers'>
         <tr *ngFor='let i of collection'>
-          <td><app-icon-edit (click)="goToEdit(i)"></app-icon-edit></td>
+          <td>
+            <app-icon-edit (click)="goToEdit(i)"></app-icon-edit>
+            <app-icon-delete (click)="onDelete(i)"></app-icon-delete>
+          </td>
           <td>{{i.name | uppercase}}</td>
           <td>{{i.totalCaHt}}</td>
           <td>{{i.comment}}</td>

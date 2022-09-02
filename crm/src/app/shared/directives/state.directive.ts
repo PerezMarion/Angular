@@ -9,16 +9,11 @@ export class StateDirective {
   @Input() etat!: string;
   @HostBinding('class') tdClassName!: string; 
 
-  constructor() { 
-    console.log(this.etat, 'depuis directive appState');
-  }
+  constructor() {}
 
-  ngOnInit() {
-    console.log(this.etat, 'depuis ngOnInit');
-  }
+  ngOnInit() {}
 
   ngOnChanges() {
-    console.log(this.etat, 'depuis ngOnChanges');
     this.tdClassName = "state-" + this.etat.toLowerCase();
   }
 

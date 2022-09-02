@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Client } from 'src/app/core/models/client';
+import { ClientsService } from '../../services/clients.service';
 
 @Component({
   selector: 'app-page-edit-clients',
@@ -7,7 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageEditClientsComponent implements OnInit {
 
-  constructor() { }
+  item$!: Observable<Client>;
+
+  constructor(
+    private clientsService: ClientsService,
+    private activatedRoute : ActivatedRoute,
+    private router : Router) { 
+      const clientId = Number(this.activatedRoute.snapshot.paramMap.get("id"));
+      this.item$ = this.clientsService.getById(clientId);
+  }
+
+  onEdit(item : Client) {
+    this.clientsService.update(item).subscribe(data => {
+      this.router.navigate(["clients"]);
+    });
+  }
 
   ngOnInit(): void {
   }
